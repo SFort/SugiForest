@@ -284,17 +284,6 @@ public class BlockSugiChest extends BlockContainer
 		if (willHarvest)
 		{
 			ItemStack chest = ItemStack.EMPTY;
-			ItemStack held = player.getHeldItemMainhand();
-
-			if (player.isSneaking() && held.isEmpty() || EnchantmentHelper.getEnchantmentLevel(Enchantments.SILK_TOUCH, held) > 0)
-			{
-				TileEntity tile = world.getTileEntity(pos);
-
-				if (tile != null && tile instanceof TileEntityLockable)
-				{
-					chest = getContainedChest((TileEntityLockable)tile);
-				}
-			}
 
 			if (chest.isEmpty())
 			{
